@@ -68,4 +68,4 @@ RESULT  SAMPLES     FREQ      EXPECT  DESCRIPTION
 
 ![Зависимость времени от ресурсов](download.png)
 
-![Сравнение serial и parallel bfs по рантайму](download (1).png)
+![Сравнение serial и parallel bfs по рантайму](download_1.png)
