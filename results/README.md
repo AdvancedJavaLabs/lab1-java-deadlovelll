@@ -36,6 +36,7 @@ if (visited.compareAndSet(u, 0, 1)) {
 
 Для выполнения JCStress-тестов используется Makefile:
 
+```
 jcstress:
 javac -cp jcstress-latest.jar -d out \
 app/src/main/java/org/graph/Graph.java \
@@ -44,13 +45,16 @@ app/src/test/java/org/graph/SameStartConcurrentTest.java \
 app/src/test/java/org/graph/StaticAdjListInterferenceTest.java
 java -cp out:jcstress-latest.jar org.openjdk.jcstress.Main -tb 1s
 rm jcstress-results-*.bin.gz
+```
 
 Результаты
+
+```
 RUN RESULTS:
 Interesting tests: No matches.
 Failed tests: No matches.
 Error tests: No matches.
-
+```
 
 Все тесты прошли успешно — гонок данных при параллельной работе parallelBFS не выявлено.
 Атомарные операции и структура итераций по фронтам обеспечивают 
@@ -59,12 +63,13 @@ Error tests: No matches.
 Если протестировать сломанную реализацию (GraphBroken),
 получаем следующие реузльтаты:
 
+```
 RESULT  SAMPLES     FREQ      EXPECT  DESCRIPTION
 1      134    0.01%   Forbidden  
 15    2,285    0.23%  Acceptable  All 4 vertices visited (bitmask 1111b == 15)
 3  976,562   97.82%   Forbidden  
-7   19,357    1.94%   Forbidden  
-
+7   19,357    1.94%   Forbidden
+```
 
 ![Зависимость времени от ресурсов](download.png)
 
