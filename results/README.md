@@ -64,3 +64,8 @@ RESULT  SAMPLES     FREQ      EXPECT  DESCRIPTION
 15    2,285    0.23%  Acceptable  All 4 vertices visited (bitmask 1111b == 15)
 3  976,562   97.82%   Forbidden  
 7   19,357    1.94%   Forbidden  
+
+
+![Зависимость времени от ресурсов](download.png)
+
+![Сравнение serial и parallel bfs по рантайму](download (1).png)
